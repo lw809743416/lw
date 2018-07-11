@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+<bean id="userDao" class="demo.app.dao.impl.oracle.UserDaoImpl"></bean>
+<bean id="userBiz" class="demo.app.biz.impl.UserBizImpl">
+	<property name="userDao" ref="userDao"></property>
+</bean>
+<bean id="app" class="demo.app.App">
+	<property name="userBiz" ref="userBiz"></property>
+</bean>
+</beans>
